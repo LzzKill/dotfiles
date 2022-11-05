@@ -26,6 +26,7 @@ pulse
 transmission
 vlc
 vokoscreenNG
+ibus
 .gsd-keyboard.settings-ported
 QtProject.conf
 libinput-gestures.conf

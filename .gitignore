@@ -31,3 +31,4 @@ ibus
 QtProject.conf
 libinput-gestures.conf
 mimeapps.list
+nvim

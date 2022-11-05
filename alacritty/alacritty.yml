@@ -5,7 +5,7 @@ window:
   dimensions:
     columns: 80
     lines: 20
-  opacity: 0.75
+  opacity: 0.85
 
 live_config_reload: true
 background: "#282a36"

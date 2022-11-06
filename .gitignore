@@ -27,6 +27,7 @@ transmission
 vlc
 vokoscreenNG
 ibus
+.ibus
 .gsd-keyboard.settings-ported
 QtProject.conf
 libinput-gestures.conf

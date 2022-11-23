@@ -11,22 +11,22 @@ live_config_reload: true
 background: "#282a36"
 
 font:
-  size: 12
+  #size: 12
 
   normal:
-    family: "Comic Mono"
+    family: "DejaVu Sans Mono"
     style: Regular
 
   bold:
-    family: "Comic Mono"
+    family: "DejaVu Sans Mono"
     style: Bold
 
   italic:
-    family: "Comic Mono"
+    family: "DejaVu Sans Mono"
     style: Italic
 
   bold_italic:
-    family: "Comic Mono"
+    family: "DejaVu Sans Mono"
     style: Bold Italic
 
 selection:

@@ -27,9 +27,11 @@ transmission
 vlc
 vokoscreenNG
 ibus
-.ibus
 .gsd-keyboard.settings-ported
 QtProject.conf
 libinput-gestures.conf
 mimeapps.list
 nvim
+Code - Insiders
+Visual Studio Live Share
+electron

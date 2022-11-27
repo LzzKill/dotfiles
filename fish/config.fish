@@ -3,7 +3,6 @@ if status is-interactive
 
     alias ls="ls -a";
     alias lg lazygit;
-    alias neofetch "neofetch | lolcat";
     alias paccc "sudo pacman -Syu"
     # abbr
 end

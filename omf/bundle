@@ -1,8 +1,0 @@
-package archlinux
-package autojump
-package fzf
-package fzf-autojump
-package neovim
-package thefuck
-theme default
-theme neolambda

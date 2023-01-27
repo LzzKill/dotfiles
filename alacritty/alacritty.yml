@@ -13,58 +13,58 @@ font:
   size: 14
 
   normal:
-    family: "JetBrains Mono"
+    family: "lxgw wenkai mono"
     style: Regular
 
   bold:
-    family: "JetBrains Mono"
+    family: "lxgw wenkai mono"
     style: Bold
 
   italic:
-    family: "JetBrains Mono"
+    family: "lxgw wenkai mono"
     style: Italic
 
   bold_italic:
-    family: "JetBrains Mono"
+    family: "lxgw wenkai mono"
     style: Bold Italic
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
 
-cursor:
+# cursor:
   # Block Underline _ Beam |
-  style: Beam
+  # style: Beam
 
-items:
-  - colors:
-      name: Atelierforest (light)
-      author: Chris Kempson
-      primary:
-        background: "#f1efee"
-        foreground: "#68615e"
-      cursor:
-        text: "#f1efee"
-        cursor: "#68615e"
-      normal:
-        black: "#1b1918"
-        red: "#f22c40"
-        green: "#5ab738"
-        yellow: "#d5911a"
-        blue: "#407ee7"
-        magenta: "#6666ea"
-        cyan: "#00ad9c"
-        white: "#a8a19f"
-      bright:
-        black: "#766e6b"
-        red: "#f22c40"
-        green: "#5ab738"
-        yellow: "#d5911a"
-        blue: "#407ee7"
-        magenta: "#6666ea"
-        cyan: "#00ad9c"
-        white: "#f1efee"
-  - theme: Atelierforest.light
+# items:
+#   - colors:
+#       name: Atelierforest (light)
+#       author: Chris Kempson
+#       primary:
+#         background: "#f1efee"
+#         foreground: "#68615e"
+#       cursor:
+#         text: "#f1efee"
+#         cursor: "#68615e"
+#       normal:
+#         black: "#1b1918"
+#         red: "#f22c40"
+#         green: "#5ab738"
+#         yellow: "#d5911a"
+#         blue: "#407ee7"
+#         magenta: "#6666ea"
+#         cyan: "#00ad9c"
+#         white: "#a8a19f"
+#       bright:
+#         black: "#766e6b"
+#         red: "#f22c40"
+#         green: "#5ab738"
+#         yellow: "#d5911a"
+#         blue: "#407ee7"
+#         magenta: "#6666ea"
+#         cyan: "#00ad9c"
+#         white: "#f1efee"
+#   - theme: Atelierforest.light
 colors:
   # Default colors
   primary:
@@ -101,3 +101,4 @@ colors:
     - { index: 16, color: '0xF8BD96' }
     - { index: 17, color: '0xF5E0DC' }
 theme: Catppuccin
+

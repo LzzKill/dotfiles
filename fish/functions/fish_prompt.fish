@@ -43,7 +43,7 @@ function fish_prompt
 
     # change `at` to `ssh` when an interactive ssh session is present
     if [ "$SSH_TTY" = "" ]
-        set -g location at
+        set -g location @
         # set -g __fish_prompt_hostname (set_color orange)(hostname|cut -d . -f 1)
     else # connected via ssh
         if [ "$TERM" = xterm-256color-italic -o "$TERM" = tmux-256color ]

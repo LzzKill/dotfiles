@@ -1,4 +1,4 @@
 function pacs
-    pacman -Qq | fzf
+  pacman -Qq | fzf
 end
 

@@ -1,4 +1,4 @@
 function dfzf
-du -a ~/ | awk '{print $2}' | fzf
+  du -a (pwd) | awk '{print $2}' | fzf
 end
 

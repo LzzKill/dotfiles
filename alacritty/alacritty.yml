@@ -4,28 +4,26 @@ window:
   dimensions:
     columns: 80
     lines: 20
-  opacity: 0.6
+  opacity: 0.8
 
 live_config_reload: true
 background: "#282a36"
 
 font:
-  size: 14
-
   normal:
-    family: "lxgw wenkai mono"
+    family: "victormono nerd font"
     style: Regular
 
   bold:
-    family: "lxgw wenkai mono"
+    family: "victormono nerd font"
     style: Bold
 
   italic:
-    family: "lxgw wenkai mono"
+    family: "victormono nerd font"
     style: Italic
 
   bold_italic:
-    family: "lxgw wenkai mono"
+    family: "victormono nerd font"
     style: Bold Italic
 
 selection:

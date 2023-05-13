@@ -7,4 +7,3 @@ if status is-interactive
     # abbr
 end
 
-thefuck --alias | source

@@ -1,6 +1,9 @@
 * {
   font-family: lxgw wenkai mono, FontAwesome, Arial;
   font-size: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 5px;
 }
 
 window#waybar {
@@ -8,33 +11,29 @@ window#waybar {
 }
 
 #workspaces {
-  background-color: transparent;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 #workspaces button {
-  box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
-  background-color: #fff;
-  border-radius: 10px;
-  margin-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-left: 10px;
   padding-right: 10px;
-  color: #cba6f7;
+  margin-right: 10px;
+  color: #bf7d54;
+  background: #f9e2af;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(240, 128, 128, 1);
 }
 
 #workspaces button.active {
-  box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-  margin-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  background: rgb(202, 158, 230);
-  background-size: 300% 300%;
-  animation: gradient 10s ease infinite;
-  color: #fff;
+  color: #000000;
 }
 
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -46,6 +45,7 @@ window#waybar {
     background-position: 0% 50%;
   }
 }
+
 #custom-logo,
 #clock,
 #battery,
@@ -66,7 +66,6 @@ window#waybar {
 #custom-dynamic_pill,
 #mpd {
   padding: 0 10px;
-  border-radius: 20px;
   background-color: #cdd6f4;
   color: #516079;
   box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
@@ -104,7 +103,6 @@ window#waybar {
   background-size: 300% 300%;
   animation: gradient 15s ease infinite;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-  font-weight: bolder;
   color: #fff;
 }
 #custom-dynamic_pill.critical {
@@ -120,7 +118,6 @@ window#waybar {
   background-size: 300% 300%;
   animation: gradient 15s ease infinite;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-  font-weight: bolder;
   color: #fff;
 }
 
@@ -135,23 +132,19 @@ window#waybar {
   background-size: 300% 300%;
   animation: gradient 15s ease infinite;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-  font-weight: 900;
   color: #fff;
 }
 #custom-dynamic_pill.paused {
   background: #fff;
-  font-weight: bolder;
   color: #b4befe;
 }
 
 #custom-ss {
   background: #fff;
   color: rgba(203, 166, 247, 1);
-  font-weight: bolder;
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 15px;
 }
 
 #custom-cycle_wall {
@@ -173,9 +166,7 @@ window#waybar {
   color: #fff;
   background-size: 500% 500%;
   animation: gradient 7s linear infinite;
-  font-weight: bolder;
   padding: 5px;
-  border-radius: 15px;
 }
 
 #clock {
@@ -201,7 +192,6 @@ window#waybar {
 #battery {
   background-color: #fff;
   /* color: #a6e3a1; */
-  font-weight: bolder;
 }
 
 @keyframes blink {
@@ -219,9 +209,6 @@ window#waybar {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-label:focus {
 }
 
 #cpu {
@@ -243,7 +230,6 @@ label:focus {
 #memory {
   background-color: #cba6f7;
   color: #9a75c7;
-  font-weight: bolder;
 }
 
 #disk {
@@ -270,8 +256,6 @@ label:focus {
     rgba(250, 179, 135, 1) 100%
   );
   color: #fff;
-  font-weight: bolder;
-  padding-top: 3px;
   padding-right: 11px;
 }
 
@@ -287,7 +271,6 @@ label:focus {
 #pulseaudio {
   background-color: #fab387;
   color: #bf7d54;
-  font-weight: bolder;
 }
 
 #pulseaudio.muted {

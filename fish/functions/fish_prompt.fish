@@ -2,14 +2,10 @@ function fish_prompt
 
     # Cache exit status
     set -l last_status $status
-
     # Set color for variables in prompt
     set -l normal (set_color normal)
     set -l white (set_color FFFFFF)
     set -l turquoise (set_color 5fdfff)
-    set -l orange (set_color df5f00)
-    set -l hotpink (set_color df005f)
-    set -l blue (set_color blue)
     set -l limegreen (set_color 87ff00)
     set -l purple (set_color af5fff)
     set -l red (set_color e70e0e)
@@ -24,10 +20,7 @@ function fish_prompt
     set -g __fish_git_prompt_showuntrackedfiles true
     set -g __fish_git_prompt_showstashstate true
 
-    # FIXME: below var causes rendering issues with fish v3.2.0
     set -g __fish_git_prompt_show_informative_status true
-
-
     # Only calculate once, to save a few CPU cycles when displaying the prompt
     if not set -q __fish_prompt_hostname
         # set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
@@ -59,19 +52,13 @@ function fish_prompt
 
     if [ (id -u) -eq 0 ]
         # top line > Superuser
-        echo -n $red'╭─'$hotpink$USER $white$location $__fish_prompt_hostname$white' -> '$limegreen(pwd)$turquoise
+        echo -n $limegreen(pwd)$purple
         __fish_git_prompt " (%s)"
-        echo
-        # bottom line > Superuser
-        echo -n $red'╰'
-        echo -n $red'─'$__fish_prompt_char $normal
+        echo -n $red' '$__fish_prompt_char $normal
     else # top line > non superuser's
-        echo -n $white'╭─'$hotpink$USER $white$location $__fish_prompt_hostname$white' -> '$limegreen(pwd)$turquoise
+        echo -n $limegreen(pwd)$purple
         __fish_git_prompt " (%s)"
-        echo
-        # bottom line > non superuser's
-        echo -n $white'╰'
-        echo -n $white'─'$__fish_prompt_char $normal
+        echo -n $white' '$__fish_prompt_char $normal
     end
 
     # NOTE: disable `VIRTUAL_ENV_DISABLE_PROMPT` in `config.fish`

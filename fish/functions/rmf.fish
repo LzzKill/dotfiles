@@ -1,6 +1,5 @@
 function rmf
   set path (du -a (pwd) | awk '{print $2}' | fzf)
-
   if test $path # has file
 
     if test $argv[1]

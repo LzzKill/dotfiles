@@ -7,8 +7,6 @@ window:
   opacity: 0.8
 
 live_config_reload: true
-background: "#282a36"
-
 font:
   normal:
     family: "victormono nerd font"

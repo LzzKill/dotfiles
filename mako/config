@@ -1,0 +1,24 @@
+font="VictorMono Nerd Font Mono 12 @‍wght=200".
+sort=-time
+layer=overlay
+background-color=#2d2a2e66
+width=400
+height=200
+border-size=1
+border-color=#cceeff
+icons=1
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+margin=12
+padding=12,20
+
+[urgency=low]
+border-color=#aaaaaa
+
+[urgency=normal]
+border-color=#cceeff
+
+[urgency=critical]
+border-color=#ff7777
+default-timeout=0

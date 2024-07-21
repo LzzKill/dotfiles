@@ -5,6 +5,8 @@ if status is-interactive
     abbr ll "eza -l"
     abbr lg lazygit;
     abbr paccc "sudo pacman -Syu"
+    abbr lvim "~/.local/bin/lvim"
+    zoxide init fish | source
     # abbr
 end
 

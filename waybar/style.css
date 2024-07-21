@@ -80,33 +80,33 @@ window#waybar.hidden {
 }
 
 #clock {
-    background-color: #eefff1;
+    background-color: rgba(238, 255, 241, 0.5);
     color: #000000;
 }
 
 #cpu {
-    background-color: #FE968B;
+    background-color: rgba(254, 150, 139, 0.5);
     color: #000000;
 }
 
 #memory {
-    background-color: #FFEAAA;
+    background-color: rgba(255, 234, 170, 0.5);
     color: #000000;
 }
 
 #pulseaudio {
-    background-color: #b0f5e5;
+    background-color: rgba(176, 245, 229, 0.5);
     color: #000000;
 }
 
 #network {
-    background-color: #a4e4fe;
+    background-color: rgba(164, 228, 254, 0.5);
     color: #000000;
 }
 
 #battery.charging,
 #battery.plugged {
-  background-color: #94e2d5;
+  background-color: rgba(148, 226, 213, 0.5);
 }
 
 #battery {

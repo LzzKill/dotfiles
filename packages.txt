@@ -1,0 +1,17 @@
+wayland
+hyprland
+hyprpaper
+waybar
+fcitx5
+neovim
+firefox
+mako
+kitty
+alacritty
+ranger
+tofi
+wayfire
+lua
+eza
+buttom
+paru

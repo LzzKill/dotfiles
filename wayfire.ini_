@@ -43,6 +43,8 @@
 
 [core]
 
+# List of plugins to be enabled.
+# See the Configuration document for a complete list.
 plugins = \
   alpha \
   animate \
@@ -57,7 +59,6 @@ plugins = \
   grid \
   gtk-shell \
   idle \
-	input \
   invert \
   move \
   oswitch \
@@ -71,8 +72,7 @@ plugins = \
   wm-actions \
   wobbly \
   wrot \
-  zoom \
-#  simple-tile
+  zoom
 
 # Note: [blur] is not enabled by default, because it can be resource-intensive.
 # Feel free to add it to the list if you want it.
@@ -83,8 +83,8 @@ plugins = \
 close_top_view = <super> KEY_Q | <alt> KEY_F4
 
 # Workspaces arranged into a grid: 3 × 3.
-vwidth = 2
-vheight = 2
+vwidth = 3
+vheight = 3
 
 # Prefer client-side decoration or server-side decoration
 preferred_decoration_mode = client
@@ -119,46 +119,43 @@ toggle = <super> <ctrl> KEY_F
 
 [autostart]
 
+# Automatically start background and panel.
+# Set to false if you want to override the default clients.
 autostart_wf_shell = true
-XDG_CURRENT_DESKTOP = wlroots 
-00_dbus = dbus-launch
-01_xdp=/usr/libexec/xdg-desktop-portal
-02_xdpg=/usr/libexec/xdg-desktop-portal-gtk
-03_xdpw=/usr/libexec/xdg-desktop-portal-wlr
-portal=/usr/libexec/xdg-desktop-portal-gtk
-QT_QPA_PLATFORM=wayland
 
 # Set the wallpaper, start a panel and dock if you want one.
 # https://github.com/WayfireWM/wf-shell
 #
 # These are started by the autostart_wf_shell option above.
 #
-;background = wf-background
-background = hyprpaper
+# background = wf-background
 # panel = wf-panel
+#
+# You may also use wf-dock,
+# which is included in wf-shell but is not enabled by default.
+#
 # dock = wf-dock
-bar = waybar
 
 # Output configuration
 # https://wayland.emersion.fr/kanshi/
-# outputs = kanshi
+outputs = kanshi
 
 # Notifications
 # https://wayland.emersion.fr/mako/
-# notifications = mako
+notifications = mako
 
 # Screen color temperature
 # https://sr.ht/~kennylevinsen/wlsunset/
-# gamma = wlsunset
+gamma = wlsunset
 
 # Idle configuration
 # https://github.com/swaywm/swayidle
 # https://github.com/swaywm/swaylock
-# idle = swayidle before-sleep swaylock
+idle = swayidle before-sleep swaylock
 
 # XDG desktop portal
 # Needed by some GTK applications
-# portal = /usr/libexec/xdg-desktop-portal
+portal = /usr/libexec/xdg-desktop-portal
 
 # Example configuration:
 #
@@ -171,40 +168,31 @@ bar = waybar
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds.
 
-active = activate-linux
-fcitx = fcitx5 -d
 # Applications ─────────────────────────────────────────────────────────────────
-
-[input]
-
-#Applications
 
 [command]
 
 # Start a terminal
 # https://github.com/alacritty/alacritty
-binding_terminal = <super> <shift> KEY_T
+binding_terminal = <super> KEY_ENTER
 command_terminal = alacritty
-binding_terminal1 = <super> KEY_T
-command_terminal1 = kitty
-binding_terminal1 = <super> KEY_ENTER
-command_terminal1 = kitty
+
 # Start your launcher
 # https://hg.sr.ht/~scoopta/wofi
 # Note: Add mode=run or mode=drun to ~/.config/wofi/config.
 # You can also specify the mode with --show option.
-binding_launcher = <super> KEY_D
-command_launcher = tofi-drun
+binding_launcher = <super> <shift> KEY_ENTER
+command_launcher = wofi
 
 # Screen locker
 # https://github.com/swaywm/swaylock
-# binding_lock = <super> <shift> KEY_ESC
-# command_lock = swaylock
+binding_lock = <super> <shift> KEY_ESC
+command_lock = swaylock
 
 # Logout
 # https://github.com/ArtsyMacaw/wlogout
-# binding_logout = <super> KEY_ESC
-# command_logout = wlogout
+binding_logout = <super> KEY_ESC
+command_logout = wlogout
 
 # Screenshots
 # https://wayland.emersion.fr/grim/
@@ -213,26 +201,22 @@ binding_screenshot = KEY_PRINT
 command_screenshot = grim $(date '+%F_%T').webp
 binding_screenshot_interactive = <shift> KEY_PRINT
 command_screenshot_interactive = slurp | grim -g - $(date '+%F_%T').webp
-binging_grim = <super> <shift> s
-command_grim = grimshot copy area
-binding_quit = <super> KEY_M
-command_quit = pkill wayfire
 
 # Volume controls
 # https://alsa-project.org
-# repeatable_binding_volume_up = KEY_VOLUMEUP
-# command_volume_up = amixer set Master 5%+
-# repeatable_binding_volume_down = KEY_VOLUMEDOWN
-# command_volume_down = amixer set Master 5%-
-# binding_mute = KEY_MUTE
-# command_mute = amixer set Master toggle
+repeatable_binding_volume_up = KEY_VOLUMEUP
+command_volume_up = amixer set Master 5%+
+repeatable_binding_volume_down = KEY_VOLUMEDOWN
+command_volume_down = amixer set Master 5%-
+binding_mute = KEY_MUTE
+command_mute = amixer set Master toggle
 
 # Screen brightness
 # https://haikarainen.github.io/light/
-# repeatable_binding_light_up = KEY_BRIGHTNESSUP
-# command_light_up = light -A 5
-# repeatable_binding_light_down = KEY_BRIGHTNESSDOWN
-# command_light_down = light -U 5
+repeatable_binding_light_up = KEY_BRIGHTNESSUP
+command_light_up = light -A 5
+repeatable_binding_light_down = KEY_BRIGHTNESSDOWN
+command_light_down = light -U 5
 
 # Windows ──────────────────────────────────────────────────────────────────────
 
@@ -261,12 +245,15 @@ slot_r = <super> KEY_RIGHT | <super> KEY_KP6
 slot_tl = <super> KEY_KP7
 slot_t = <super> KEY_KP8
 slot_tr = <super> KEY_KP9
+# Restore default.
 restore = <super> KEY_DOWN | <super> KEY_KP0
 
+# Change active window with an animation.
 [switcher]
 next_view = <alt> KEY_TAB
 prev_view = <alt> <shift> KEY_TAB
 
+# Simple active window switcher.
 [fast-switcher]
 activate = <alt> KEY_ESC
 
@@ -279,21 +266,21 @@ binding_down = <ctrl> <super> KEY_DOWN
 binding_up = <ctrl> <super> KEY_UP
 binding_right = <ctrl> <super> KEY_RIGHT
 # Move the focused window with the same key-bindings, but add Shift.
-with_win_left = <super> <shift> KEY_LEFT
-with_win_down = <super> <shift> KEY_DOWN
-with_win_up = <super> <shift> KEY_UP
-with_win_right = <super> <shift> KEY_RIGHT
+with_win_left = <ctrl> <super> <shift> KEY_LEFT
+with_win_down = <ctrl> <super> <shift> KEY_DOWN
+with_win_up = <ctrl> <super> <shift> KEY_UP
+with_win_right = <ctrl> <super> <shift> KEY_RIGHT
 
 # Show the current workspace row as a cube.
-# [cube]
-# activate = <ctrl> <alt> BTN_LEFT
+[cube]
+activate = <ctrl> <alt> BTN_LEFT
 # Switch to the next or previous workspace.
 #rotate_left = <super> <ctrl> KEY_H
 #rotate_right = <super> <ctrl> KEY_L
 
 # Show an overview of all workspaces.
 [expo]
-toggle = <super>
+toggle = <super> KEY_E
 # Select a workspace.
 # Workspaces are arranged into a grid of 3 × 3.
 # The numbering is left to right, line by line.
@@ -307,6 +294,11 @@ select_workspace_1 = KEY_1
 select_workspace_2 = KEY_2
 select_workspace_3 = KEY_3
 select_workspace_4 = KEY_4
+select_workspace_5 = KEY_5
+select_workspace_6 = KEY_6
+select_workspace_7 = KEY_7
+select_workspace_8 = KEY_8
+select_workspace_9 = KEY_9
 
 # Outputs ──────────────────────────────────────────────────────────────────────
 
@@ -324,29 +316,6 @@ toggle = <super> KEY_I
 # Send toggle menu event.
 [wayfire-shell]
 toggle_menu = <super>
-
-# 平铺窗口的配置
-[simple-tile]
-# 移动窗口
-button_move=<super>
-# 平铺窗口大小
-button_resize=<super>
-# 指定更改焦点时是否保持全屏状态。如果为true，则下一个聚焦窗口也将变为全屏。如果为false，则退出全屏.
-keep_fullscreen_on_adjacent=false
-# 切换焦点
-key_focus_above =<super> KEY_UP
-key_focus_below =<super> KEY_DOWN
-key_focus_left =<super> KEY_LEFT
-key_focus_right =<super> KEY_RIGHT
-# 切换平铺 
-key_toggle = <super> KEY_V
-# 为符合指定条件的窗口启用平铺。默认值为all,这里
-tile_by_default = (floating is false) 
-# 设置平铺窗口间隔
-inner_gap_size = 3 # 窗口之间间距
-outer_vert_gap_size = 5 #屏幕上下间距
-outer_horiz_gap_size= 5 #屏幕左右间距
-
 
 # Rules ────────────────────────────────────────────────────────────────────────
 
